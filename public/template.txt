@@ -1,0 +1,11 @@
+const {{className}}: React.FC = () => {
+    {{functionTemplate}}
+
+    return (
+        <>
+            {{jsxTemplate}}
+        </>
+    )
+}
+
+export default {{className}}

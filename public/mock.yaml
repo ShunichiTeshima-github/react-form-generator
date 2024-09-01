@@ -1,0 +1,7 @@
+paths:
+  /work:
+    /detail:
+      elements:
+        title:
+          type: input
+          name: '表示用職種名'

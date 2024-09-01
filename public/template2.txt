@@ -1,0 +1,16 @@
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+
+// フォームの定義
+const formSchema = z.object({
+{{formDefinition}}
+})
+
+// 関数コンポーネント内に記載
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+        // 定義をもとに初期値の設定（APIとの兼ね合いがあるため保留）
+    }
+  })
