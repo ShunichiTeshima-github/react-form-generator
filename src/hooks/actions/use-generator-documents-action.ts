@@ -2,7 +2,7 @@ import { useRecoilCallback } from 'recoil'
 import { generatorDocumentsAtom } from '@/stores/generator-documents-atom'
 import { ComponentModel, GeneratorModel } from '@/shared/models/generator'
 
-const generatorDocumentsAction = () => {
+const useGeneratorDocumentsAction = () => {
   //要素の追加・更新
   const changeGeneratorDocuments = useRecoilCallback(
     ({ snapshot, set }) =>
@@ -120,4 +120,4 @@ const generatorDocumentsAction = () => {
   }
 }
 
-export { generatorDocumentsAction }
+export { useGeneratorDocumentsAction }

@@ -1,2 +1,2 @@
 export * from './use-editor-action'
-export * from './generate-code-action'
+export * from './use-generate-code-action'

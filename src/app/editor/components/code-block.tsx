@@ -6,7 +6,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 interface Props {
   codeType: string
-  children: React.ReactNode
+  children: string | string[]
 }
 
 const CodeBlock: React.FC<Props> = ({ ...Props }) => {
@@ -27,7 +27,7 @@ const CodeBlock: React.FC<Props> = ({ ...Props }) => {
         className="pl-2 flex justify-between items-center"
       >
         <p>{Props.codeType}</p>
-        <CopyToClipboard text={Props.children} onCopy={handleCopy}>
+        <CopyToClipboard text={String(Props.children)} onCopy={handleCopy}>
           <Button variant={'ghost'}>{copied ? 'Copied!' : 'Copy'}</Button>
         </CopyToClipboard>
       </div>

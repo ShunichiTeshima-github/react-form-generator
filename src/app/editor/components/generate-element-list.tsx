@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/table'
 import { ElementModel } from '@/shared/models/generator'
 import ElementEditorDialog from './dialog/element-editor/element-editor-dialog'
-import { generatorDocumentsAction } from '@/hooks/actions/generator-documents-action'
+import { useGeneratorDocumentsAction } from '@/hooks/actions/use-generator-documents-action'
 import { useState } from 'react'
 
 interface Props {
@@ -23,7 +23,7 @@ const GenerateElementList: React.FC<Props> = ({ ...props }) => {
 
   // action
   const { deleteElementFromGeneratorDocuments, changeDisplayOrder } =
-    generatorDocumentsAction()
+    useGeneratorDocumentsAction()
 
   const deleteElement = (key: string) => {
     deleteElementFromGeneratorDocuments(key)

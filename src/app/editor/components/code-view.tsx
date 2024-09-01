@@ -3,7 +3,7 @@ import { generatedCodeAtom } from '@/stores/generated-code-atom'
 import { useRecoilValue } from 'recoil'
 import CodeBlock from './code-block'
 
-export default function codeView() {
+export default function CodeView() {
   // state
   const generatedCode = useRecoilValue(generatedCodeAtom)
 

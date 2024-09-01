@@ -2,7 +2,7 @@ import { useRecoilCallback } from 'recoil'
 
 import { generatedCodeAtom } from '@/stores/generated-code-atom'
 
-const generateCodeAction = () => {
+const useGenerateCodeAction = () => {
   const changeGeneratedCode = useRecoilCallback(
     ({ set }) =>
       (generatedCode: string) => {
@@ -13,4 +13,4 @@ const generateCodeAction = () => {
   return { changeGeneratedCode }
 }
 
-export { generateCodeAction }
+export { useGenerateCodeAction }

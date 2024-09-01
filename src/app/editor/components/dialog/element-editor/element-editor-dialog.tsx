@@ -14,7 +14,7 @@ import { z } from 'zod'
 import { Form } from '@/components/ui/form'
 import { DialogClose } from '@radix-ui/react-dialog'
 import { ElementModel } from '@/shared/models/generator'
-import { generatorDocumentsAction } from '@/hooks/actions/generator-documents-action'
+import { useGeneratorDocumentsAction } from '@/hooks/actions/use-generator-documents-action'
 import SelectEditor from './organisms/select-editor'
 import CommonEditor from './organisms/common-editor'
 import RadioEditor from './organisms/radio-editor'
@@ -56,7 +56,7 @@ export type keyStr =
 
 const ElementEditorDialog: React.FC<props> = ({ objKey, element }) => {
   //action
-  const { changeGeneratorDocuments } = generatorDocumentsAction()
+  const { changeGeneratorDocuments } = useGeneratorDocumentsAction()
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

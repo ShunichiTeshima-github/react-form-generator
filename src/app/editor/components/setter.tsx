@@ -7,11 +7,11 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import GenerateElementGroup from './generate-element-group'
 import { renderToString } from 'react-dom/server'
-import { generateCodeAction } from '@/hooks/actions'
+import { useGenerateCodeAction } from '@/hooks/actions'
 import GenerateElementList from './generate-element-list'
-import { previewCodeAction } from '@/hooks/actions/preview-code-action'
+import { usePreviewCodeAction } from '@/hooks/actions/use-preview-code-action'
 import ElementEditorDialog from './dialog/element-editor/element-editor-dialog'
-import { generatorDocumentsAction } from '@/hooks/actions/generator-documents-action'
+import { useGeneratorDocumentsAction } from '@/hooks/actions/use-generator-documents-action'
 import { generatorDocumentsAtom } from '@/stores/generator-documents-atom'
 import { useRecoilValue } from 'recoil'
 
@@ -21,9 +21,9 @@ export default function Setter() {
   }>({})
 
   // action
-  const { changeGeneratedCode } = generateCodeAction()
-  const { changePreviewCode } = previewCodeAction()
-  const { setGeneratorDocuments } = generatorDocumentsAction()
+  const { changeGeneratedCode } = useGenerateCodeAction()
+  const { changePreviewCode } = usePreviewCodeAction()
+  const { setGeneratorDocuments } = useGeneratorDocumentsAction()
 
   // state
   const generatorDocuments = useRecoilValue(generatorDocumentsAtom)
